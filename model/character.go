@@ -2,6 +2,13 @@ package model
 
 import "math/rand"
 
+const (
+	MAIN_CLASS          string = "Main Character"
+	MAIN_CHARACTER_NAME string = "Steve"
+	DEFAULT_HEALTH      int    = 100
+	DEFAULT_SPEED       int    = 100
+)
+
 type CharacterFunc func(*Character)
 
 type Character struct {
@@ -37,29 +44,29 @@ func defaultCharacter() Character {
 	}
 }
 
-func setHealth(min, max int) CharacterFunc {
+func SetHealth(min, max int) CharacterFunc {
 	return func(c *Character) {
 		c.health = rand.Intn(max-min+1) + min
 	}
 }
 
-func setSpeed(speed int) CharacterFunc {
+func SetSpeed(speed int) CharacterFunc {
 	return func(c *Character) {
 		c.speed = speed
 	}
 }
 
-func setName(name string) CharacterFunc {
+func SetName(name string) CharacterFunc {
 	return func(c *Character) {
 		c.name = name
 	}
 }
 
-func setRandomName(c *Character) {
+func SetRandomName(c *Character) {
 	c.name = CHARACTER_NAME[rand.Intn(len(CHARACTER_NAME))]
 }
 
-func setClass(class string) CharacterFunc {
+func SetClass(class string) CharacterFunc {
 	return func(c *Character) {
 		c.class = class
 	}

@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	c "root/model"
+	c "root/model/hero/class"
 	"time"
 )
 

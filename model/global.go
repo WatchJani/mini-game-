@@ -29,12 +29,13 @@ const (
 
 	MAIN_CHARACTER_NAME string = "Steve"
 	DEFAULT_HEALTH      int    = 100
+	DEFAULT_SPEED       int    = 100
 
-	NOVA         string = "Nova"
-	XM1014       string = "XM1014"
-	AK_47        string = "AK-47"
-	M4A4         string = "M4A4"
-	AWP          string = "AWP"
-	DESERT_EAGLE string = "Desert Eagle"
-	P90          string = "P90"
+	MINI_GUN_WPN     string = "MiniGun"
+	XM1014_WPN       string = "XM1014"
+	AK_47_WPN        string = "AK-47"
+	M4A4_WPN         string = "M4A4"
+	AWP_WPN          string = "AWP"
+	DESERT_EAGLE_WPN string = "Desert Eagle"
+	P90_WPN          string = "P90"
 )

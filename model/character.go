@@ -8,6 +8,7 @@ type Character struct {
 	health int
 	name   string
 	class  string
+	speed  int
 }
 
 var CHARACTER_NAME []string = []string{
@@ -32,12 +33,25 @@ func defaultCharacter() Character {
 		health: DEFAULT_HEALTH,
 		name:   MAIN_CHARACTER_NAME,
 		class:  MAIN_CLASS,
+		speed:  DEFAULT_SPEED,
 	}
 }
 
 func setHealth(min, max int) CharacterFunc {
 	return func(c *Character) {
 		c.health = rand.Intn(max-min+1) + min
+	}
+}
+
+func setSpeed(speed int) CharacterFunc {
+	return func(c *Character) {
+		c.speed = speed
+	}
+}
+
+func setName(name string) CharacterFunc {
+	return func(c *Character) {
+		c.name = name
 	}
 }
 

@@ -12,24 +12,35 @@ func init() {
 }
 
 func main() {
-	steve := c.DefaultMain()
-	goblin := c.GoblinNew()
 
-	shadowVeil := c.NewPowerAbility("Shadow Veil", 25, 50, 5, 3)
-	fmt.Println(shadowVeil)
+	tank := c.NewTank()
 
-	fmt.Println(steve.UseWeapon(c.AK_47))
-	fmt.Println(steve)
+	fmt.Println(tank)
 
-	steve.NewPowerAbility(shadowVeil)
+	//===================================================================
 
-	fmt.Println(steve)
+	// steve := c.DefaultMain()
+	// goblin := c.GoblinNew()
 
-	apple := c.NewItem("apple")
+	// shadowVeil := c.NewPowerAbility("Shadow Veil", 25, 50, 5, 3)
+	// fmt.Println(shadowVeil)
 
-	steve.AddNewItem(apple)
+	// fmt.Println(steve.UseWeapon(c.AK_47))
+	// fmt.Println(steve)
 
-	fmt.Println(steve)
+	// steve.NewPowerAbility(shadowVeil)
 
-	c.GetBothHealth(steve, goblin)
+	// fmt.Println(steve)
+
+	// apple := c.NewItem("apple")
+
+	// steve.AddNewItem(apple)
+
+	// fmt.Println(steve)
+
+	// spawn := map[string]c.HealthReader{
+	// 	"goblin": c.GoblinNew(),
+	// }
+
+	// c.GetBothHealth(steve, spawn["goblin"])
 }

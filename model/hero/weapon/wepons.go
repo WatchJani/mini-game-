@@ -1,5 +1,9 @@
 package weapon
 
+import (
+	"fmt"
+)
+
 const (
 	MINI_GUN_WPN     string = "MiniGun"
 	XM1014_WPN       string = "XM1014"
@@ -32,4 +36,13 @@ func NewWeapon(name string, precision, leastDamage, biggestDamage, ammunition in
 	}
 
 	return weapon
+}
+
+func (w Weapon) String() {
+	fmt.Printf("Name: %s\nPrecision: %d%%\nLeast Damage: %dHP\nBiggest Damage: %dHP\nAmmunition: %d\n\n",
+		w.name,
+		w.precision,
+		w.leastDamage,
+		w.biggestDamage,
+		w.ammunition)
 }

@@ -21,7 +21,7 @@ func DefaultHero() *Hero {
 	return &Hero{
 		Character:    model.NewCharacter(),
 		PowerAbility: p.Empty(),
-		attack:       w.HouLongHeater(),
+		attack:       w.MiniGun(),
 		items:        make(map[interface{}]int),
 		visibility:   rand.Intn(68-12+1) + 12,
 	}
@@ -77,4 +77,8 @@ func (m *Hero) AddNewItem(item interface{}) {
 
 func (m *Hero) UseWeapon(weapon string) w.Weapon {
 	return m.attack[weapon]
+}
+
+func (m *Hero) TakeWeapon(newWeapon map[string]w.Weapon) {
+	m.attack = newWeapon
 }

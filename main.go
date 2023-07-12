@@ -3,7 +3,11 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"root/model"
+	e "root/model/enemy"
+	h "root/model/hero"
 	c "root/model/hero/class"
+	w "root/model/hero/weapon"
 	"time"
 )
 
@@ -12,10 +16,32 @@ func init() {
 }
 
 func main() {
+	main := map[string]*h.Hero{
+		"tank":   c.NewTank(),
+		"sniper": c.NewSniper(),
+		"scout":  c.NewScout(),
+	}
 
-	tank := c.NewTank()
+	hero := main["tank"]
 
-	fmt.Println(tank)
+	weapon := map[string]map[string]w.Weapon{
+		w.AWP_WPN:      w.AWP(),
+		w.MINI_GUN_WPN: w.MiniGun(),
+	}
+
+	AWP := weapon[w.AWP_WPN]
+
+	hero.TakeWeapon(AWP)
+
+	AWP[w.AWP_WPN].String()
+
+	fmt.Println(hero)
+
+	enemy := map[string]model.HealthReader{
+		"goblin": e.GoblinNew(),
+	}
+
+	model.GetBothHealth(hero, enemy["goblin"])
 
 	//===================================================================
 
